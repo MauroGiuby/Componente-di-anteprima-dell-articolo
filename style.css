@@ -41,5 +41,6 @@ body {
 
 .icon-share {
   border-radius: 100px;
+  color: var(--white);
   background-color: var(--grey-500);
 }
