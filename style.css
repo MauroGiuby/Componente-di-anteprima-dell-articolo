@@ -34,3 +34,12 @@ body {
   line-height: var(--tp3-line-height);
   letter-spacing: var(--tp3-letter-spacing);
 }
+
+.image-michelle {
+  border-radius: 100px;
+}
+
+.icon-share {
+  border-radius: 100px;
+  background-color: var(--grey-500);
+}
