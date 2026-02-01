@@ -1,3 +1,8 @@
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+
 .text-present-1 {
   font-family: var(--tp1-font-family);
   font-weight: var(--tp1-font-weight);
