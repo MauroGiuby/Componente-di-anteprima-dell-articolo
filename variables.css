@@ -6,21 +6,35 @@
   padding: 0;
 }
 
+
 :root {
+  /* TextPresent 1 (Bold) */
+  --tp1-font-family: "Manrope", sans-serif;
+  --tp1-font-weight: 700;
+  --tp1-font-size: 20px;
+  --tp1-line-height: 130%;
+  --tp1-letter-spacing: 0.25px;
 
-  /* --- FONT FAMILY --- */
-  --font-family: 'Manrope', sans-serif;
+  /* TextPresent 2 (Bold) */
+  --tp2b-font-family: "Manrope", sans-serif;
+  --tp2b-font-weight: 700;
+  --tp2b-font-size: 13px;
+  --tp2b-line-height: 140%;
+  --tp2b-letter-spacing: 0.12px;
 
-  /* --- FONT WEIGHTS --- */
-  --font-weight-thin: 100;
-  --font-weight-extralight: 200;
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-black: 900;
+  /* TextPresent 2 (Medium) */
+  --tp2m-font-family: "Manrope", sans-serif;
+  --tp2m-font-weight: 500;
+  --tp2m-font-size: 13px;
+  --tp2m-line-height: 140%;
+  --tp2m-letter-spacing: 0.12px;
+
+  /* TextPresent 3 (Regular) */
+  --tp3-font-family: "Manrope", sans-serif;
+  --tp3-font-weight: 400;
+  --tp3-font-size: 13px;
+  --tp3-line-height: 140%;
+  --tp3-letter-spacing: 0.25px;
 
 
   /* --- COLOR PALETTE --- */
@@ -33,7 +47,7 @@
   --grey-400: hsl(212, 23%, 69%);
   --grey-500: hsl(214, 17%, 51%);
   --grey-900: hsl(217, 19%, 35%);
-
 }
+
 
 
