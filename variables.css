@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- COLOR PALETTE --- */
+
+/* Neutrals */
+--white: hsl(0, 100%, 100%);
+
+/* Grigi */
+--grey-200: hsl(210, 46%, 95%);
+--grey-400: hsl(212, 23%, 69%);
+--grey-500: hsl(214, 17%, 51%);
+--grey-900: hsl(217, 19%, 35%);
