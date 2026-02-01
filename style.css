@@ -1,0 +1,31 @@
+.text-present-1 {
+  font-family: var(--tp1-font-family);
+  font-weight: var(--tp1-font-weight);
+  font-size: var(--tp1-font-size);
+  line-height: var(--tp1-line-height);
+  letter-spacing: var(--tp1-letter-spacing);
+}
+
+.text-present-2-bold {
+  font-family: var(--tp2b-font-family);
+  font-weight: var(--tp2b-font-weight);
+  font-size: var(--tp2b-font-size);
+  line-height: var(--tp2b-line-height);
+  letter-spacing: var(--tp2b-letter-spacing);
+}
+
+.text-present-2-medium {
+  font-family: var(--tp2m-font-family);
+  font-weight: var(--tp2m-font-weight);
+  font-size: var(--tp2m-font-size);
+  line-height: var(--tp2m-line-height);
+  letter-spacing: var(--tp2m-letter-spacing);
+}
+
+.text-present-3 {
+  font-family: var(--tp3-font-family);
+  font-weight: var(--tp3-font-weight);
+  font-size: var(--tp3-font-size);
+  line-height: var(--tp3-line-height);
+  letter-spacing: var(--tp3-letter-spacing);
+}
