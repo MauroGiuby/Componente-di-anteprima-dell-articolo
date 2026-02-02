@@ -1,5 +1,13 @@
 body {
   font-family: "Manrope", sans-serif;
+  margin: 0;
+  padding: 0 16px; /* un po di spazio laterale nella modalità mobile */
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column; /* card sopra, attribution sotto */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 
