@@ -14,8 +14,10 @@ body {
   display: flex;
   flex-direction: column; /* default: immagine sopra, testo sotto */
   width: 100%;
-  max-width: 550px;
+  max-width: 3270px;
+  max-height: 538px;
   border-radius: 8px;
+  margin: 0 auto;
   overflow: hidden;
   /* box-sizing: border-box; */
 }
@@ -103,18 +105,23 @@ picture {
 }
 
 /* Media query per desktop */
-@media (min-width: 768px) {
+@media (min-width: 730px) {
   .card {
     flex-direction: row; /* immagine a sinistra, testo a destra */
-    max-width: 700px;
+    max-width: 730px;
+    max-height: 280px;
     margin: 0; /* centrata senza margini laterali */
   }
 
-  /* Usa flex-basis per 50%-50% affidabile */
-  .card > picture,
-  .card > .card-text {
-    flex: 0 0 50%;
-    width: auto; /* evita conflitti con width */
+  /* 25% immagine — 75% testo */ 
+  .card > picture { 
+    flex: 0 0 35%; 
+    width: auto; 
+  } 
+  
+  .card > .card-text { 
+    flex: 0 0 65%; 
+    width: auto; 
   }
 
   .image-drawers {
@@ -124,4 +131,12 @@ picture {
   .card-text {
     border-radius: 0 8px 8px 0; /* arrotondati solo a destra */
   }
+}
+
+/* TABLET — 608 × 346 */ 
+@media (min-width: 480px) and (max-width: 729px) { 
+  .card { 
+    max-width: 608px; 
+    max-height: 346px; 
+  } 
 }
