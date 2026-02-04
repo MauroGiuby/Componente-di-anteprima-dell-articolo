@@ -14,9 +14,8 @@ body {
   display: flex;
   flex-direction: column; /* default: immagine sopra, testo sotto */
   width: 100%;
-  max-width: 3270px;
+  max-width: 327px;
   max-height: 538px;
-  border-radius: 8px;
   margin: 0 auto;
   overflow: hidden;
   /* box-sizing: border-box; */
