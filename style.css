@@ -89,11 +89,14 @@ picture {
 }
 
 .icon-share {
-  border-radius: 100px;
+  border-radius: 50px;
   width: 50px;
-  height: auto;
+  height: 50px;
+  justify-items: flex-end;
+  
+  background-color: var(--white);
   color: var(--white);
-  background-color: var(--grey-500);
+  border: none;
 }
 
 .attribution {
