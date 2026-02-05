@@ -88,17 +88,29 @@ picture {
   height: auto;
 }
 
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
 .icon-share {
-  border-radius: 50px;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   
-  background-color: var(--white);
-  color: var(--white);
+  background-color: var(--grey-200);
+  color: var(--grey-500);
   border: none;
+}
+
+.icon-share img {
+  width: 5px;
 }
 
 .attribution {
