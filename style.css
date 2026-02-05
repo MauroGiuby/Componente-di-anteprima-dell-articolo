@@ -40,6 +40,8 @@ picture {
   height: 100%;
   object-fit: cover; /* riempie senza distorsioni */
   border-radius: 8px 8px 0 0; /* arrotondati solo sopra */
+
+  object-position: 50% center;
 }
 
 .card-text {
@@ -76,6 +78,8 @@ picture {
   font-size: var(--tp1-font-size);
   line-height: var(--tp1-line-height);
   letter-spacing: var(--tp1-letter-spacing);
+  color: var(--grey-900);
+  margin-bottom: 10px;
 }
 
 .text-present-2-bold {
@@ -84,6 +88,7 @@ picture {
   font-size: var(--tp2b-font-size);
   line-height: var(--tp2b-line-height);
   letter-spacing: var(--tp2b-letter-spacing);
+  color: var(--grey-900);
 }
 
 .text-present-2-medium {
@@ -92,6 +97,7 @@ picture {
   font-size: var(--tp2m-font-size);
   line-height: var(--tp2m-line-height);
   letter-spacing: var(--tp2m-letter-spacing);
+  color: var(--grey-400);
 }
 
 .text-present-3 {
@@ -100,6 +106,7 @@ picture {
   font-size: var(--tp3-font-size);
   line-height: var(--tp3-line-height);
   letter-spacing: var(--tp3-letter-spacing);
+  color: var(--grey-400);
 }
 
 .image-michelle {
