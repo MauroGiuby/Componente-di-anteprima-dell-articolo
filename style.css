@@ -21,7 +21,7 @@ body {
   /* box-sizing: border-box; */
 }
 
-picture, .image-drawers {
+.image-drawers {
   height: 100%;
 }
 
