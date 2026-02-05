@@ -49,6 +49,10 @@ picture {
   border-radius: 0 0 8px 8px; /* arrotondati solo sotto */
 }
 
+.card-text button {
+  align-self: flex-end;
+}
+
 
 .text-present-1 {
   font-family: var(--tp1-font-family);
@@ -107,10 +111,8 @@ button {
   background-color: var(--grey-200);
   color: var(--grey-500);
   border: none;
-}
 
-.icon-share img {
-  width: 5px;
+  padding: 8px;
 }
 
 .attribution {
