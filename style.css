@@ -113,7 +113,7 @@ picture {
   .card {
     flex-direction: row; /* immagine a sinistra, testo a destra */
     max-width: 730px;
-    max-height: 280px;
+    /* max-height: 280px; */
     margin: 0; /* centrata senza margini laterali */
   }
 
@@ -141,6 +141,6 @@ picture {
 @media (min-width: 480px) and (max-width: 729px) { 
   .card { 
     max-width: 608px; 
-    max-height: 346px; 
+    /* max-height: 346px; */ 
   } 
 }
