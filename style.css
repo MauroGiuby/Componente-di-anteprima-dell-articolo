@@ -17,8 +17,8 @@ body {
   position: relative;
   flex-direction: column; /* default: immagine sopra, testo sotto */
   width: 100%;
-  max-width: 327px;
-  /* max-height: 538px; */
+  max-width: 730px;
+  max-height: 280px;
   margin: 0 auto;
   overflow: hidden;
   /* box-sizing: border-box; */
@@ -26,7 +26,7 @@ body {
 
 /* I figli del flex: picture e card_text */
 .card > picture,
-.card > .card_text {
+.card > .card-text {
   width: 100%;
 }
 
@@ -154,27 +154,38 @@ picture {
   .card {
     flex-direction: row; /* immagine a sinistra, testo a destra */
     max-width: 730px;
-    /* max-height: 280px; */
+    height: 280px;
     margin: 0; /* centrata senza margini laterali */
+    overflow: hidden;
   }
 
   /* 45% immagine — 55% testo */ 
   .card > picture { 
-    flex: 0 0 45%; 
-    /* width: auto; */ 
+    flex: 0 0 330px; 
+    height: 100%;
   } 
-  
-  .card > .card-text { 
-    flex: 0 0 55%; 
-    /* width: auto; */ 
+
+  .card > .card-text {
+    flex: 0 0 400px; 
+    height: 100%;
   }
 
   .image-drawers {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* mantiene il taglio */ 
+    object-position: center; /* puoi regolare se vuoi spostare il focus */
     border-radius: 8px 0 0 8px; /* arrotondati solo a sinistra */
   }
 
   .card-text {
+    flex: 0 0 485px; /* larghezza testo */ 
+    height: 100%;
     border-radius: 0 8px 8px 0; /* arrotondati solo a destra */
+    /* padding: 20px; */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
   }
 }
 
