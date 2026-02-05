@@ -21,6 +21,10 @@ body {
   /* box-sizing: border-box; */
 }
 
+picture, .image-drawers {
+  height: 100%;
+}
+
 .image-drawers {
   display: block;
   width: 100%;
@@ -140,14 +144,14 @@ body {
   }
 
   /* 45% immagine — 55% testo */ 
-  .card > img { 
+  .card > picture { 
     flex: 0 0 45%; 
-    width: auto; 
+    /* width: auto; */ 
   } 
   
   .card > .card-text { 
     flex: 0 0 55%; 
-    width: auto; 
+    /* width: auto; */ 
   }
 
   .image-drawers {
