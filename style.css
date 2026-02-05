@@ -23,14 +23,21 @@ body {
   /* box-sizing: border-box; */
 }
 
-.image-drawers {
-  height: 100%;
+/* I figli del flex: picture e card_text */
+.card > picture,
+.card > .card_text {
+  width: 100%;
+}
+
+picture {
+  display: block;
+  overflow: hidden; /* evita stacchi ai bordi dell'immagine */
 }
 
 .image-drawers {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover; /* riempie senza distorsioni */
   border-radius: 8px 8px 0 0; /* arrotondati solo sopra */
 }
