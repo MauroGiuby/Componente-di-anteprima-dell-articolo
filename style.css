@@ -40,6 +40,21 @@ picture {
   border-radius: 8px 8px 0 0; /* arrotondati solo sopra */
 }
 
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+  width: 100%;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .card-text {
   background-color: var(--white);
   padding: 20px;
@@ -52,7 +67,6 @@ picture {
 .card-text button {
   align-self: flex-end;
 }
-
 
 .text-present-1 {
   font-family: var(--tp1-font-family);
@@ -87,12 +101,17 @@ picture {
 }
 
 .image-michelle {
-  border-radius: 100px;
-  width: 80px;
-  height: auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
-button {
+.footer-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.share-btn {
   background: none;
   border: none;
   padding: 0;
@@ -106,7 +125,7 @@ button {
   border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   
   background-color: var(--grey-200);
   color: var(--grey-500);
