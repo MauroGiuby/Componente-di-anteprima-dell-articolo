@@ -24,14 +24,6 @@ body {
   /* box-sizing: border-box; */
 }
 
-/* I figli del flex: picture e card_text */
-/*
-.card > picture,
-.card > .card-text {
-  width: 100%;
-}
-*/
-
 picture {
   display: block;
   overflow: hidden; /* evita stacchi ai bordi dell'immagine */
@@ -47,7 +39,7 @@ picture {
 
 .card-text {
   background-color: var(--white);
-  padding: 20px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +50,6 @@ picture {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-top: 20px;
   width: 100%;
 }
@@ -154,21 +145,23 @@ picture {
 /* Media query per desktop 730x280px, picture 285x280px */
 @media (min-width: 730px) {
   .card {
+    display: flex;
     flex-direction: row; /* immagine a sinistra, testo a destra */
     width: 730px; 
     height: 280px;
-    margin: 0; /* centrata senza margini laterali */
     overflow: hidden;
   }
 
-  /* 45% immagine — 55% testo */ 
   .card > picture { 
-    flex: 0 0 285px; 
+    flex: 0 0 280px; 
+    height: 100%;
   } 
 
+  /*
   .card > .card-text {
     flex: 0 0 445px; 
   }
+  */
 
   .image-drawers {
     width: 100%; 
@@ -189,10 +182,46 @@ picture {
   }
 }
 
-/* TABLET — 608 × 346 */ 
-@media (min-width: 480px) and (max-width: 729px) { 
-  .card { 
-    max-width: 608px; 
-    /* max-height: 346px; */ 
-  } 
+/* TABLET — 608 × 346 */
+@media (min-width: 480px) and (max-width: 729px) {
+
+  .card {
+    display: flex;
+    flex-direction: row; /* affiancamento */
+    width: 608px;
+    height: 346px;
+    overflow: hidden;
+  }
+
+  .card > picture {
+    flex: 0 0 229px; /* immagine */
+    height: 100%;
+  }
+
+  .image-drawers {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 0 0 8px;
+  }
+
+  .card-text {
+    flex: 0 0 379px; /* testo */
+    height: 100%;
+    border-radius: 0 8px 8px 0;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
+
+/* Mobile only */
+@media (max-width: 479px) {
+  .card > picture,
+  .card > .card-text {
+    width: 100%;
+  }
+}
+
