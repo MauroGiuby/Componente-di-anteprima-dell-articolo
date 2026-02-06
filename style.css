@@ -64,15 +64,19 @@ picture {
 
 .shared {
   position: fixed;
-  display: none;
+  display: flex;
   align-items: center;
   gap: 20px;
   background: var(--grey-900);
   color: white;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border-radius: 10px;
   z-index: 1000; 
   transform: translateX(-50%); /* centratura */
+}
+
+.hide {
+  display: none;
 }
 
 /* Triangolino */ 
@@ -87,6 +91,19 @@ picture {
   border-left: 10px solid transparent; 
   border-right: 10px solid transparent; 
   border-top: 10px solid var(--grey-900); 
+}
+
+.share-btn--open {
+  background: var(--grey-900);
+}
+
+.share-btn--open .icon-share {
+  filter: brightness(0) invert(1); /* icona bianca */
+}
+
+.author--reduce {
+  justify-content: center;
+  padding: 20px 0;
 }
 
 .text-present-1 {
@@ -152,11 +169,9 @@ picture {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  
   background-color: var(--grey-200);
   color: var(--grey-500);
   border: none;
-
   padding: 8px;
 }
 
@@ -268,11 +283,10 @@ picture {
     justify-content: center; 
     padding: 20px; 
     transform: none; /* rimuove la centratura */ 
-    display: none; /* verrà attivato dal JS */
+    display: flex;
   } 
   
   .shared::after { 
     display: none; /* niente triangolino su mobile */ 
   }
 }
-
