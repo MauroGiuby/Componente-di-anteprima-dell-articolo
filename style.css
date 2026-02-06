@@ -63,12 +63,30 @@ picture {
 }
 
 .shared {
-  display: none;
   position: fixed;
+  display: none;
+  align-items: center;
+  gap: 20px;
   background: var(--grey-900);
   color: white;
-  padding: 12px 20px;
+  padding: 10px 30px;
   border-radius: 10px;
+  z-index: 1000; 
+  transform: translateX(-50%); /* centratura */
+}
+
+/* Triangolino */ 
+.shared::after { 
+  content: ""; 
+  position: absolute; 
+  bottom: -10px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-top: 10px solid var(--grey-900); 
 }
 
 .text-present-1 {
@@ -229,6 +247,32 @@ picture {
   .card > picture,
   .card > .card-text {
     width: 100%;
+  }
+
+  /* Nascondo avatar + nome + data */ 
+  .footer-left { 
+    display: none; 
+  } 
+  
+  /* Nascondo il bottone share */ 
+  .share-btn { 
+    display: none; 
+  }
+
+  .shared { 
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    border-radius: 0; 
+    justify-content: center; 
+    padding: 20px; 
+    transform: none; /* rimuove la centratura */ 
+    display: none; /* verrà attivato dal JS */
+  } 
+  
+  .shared::after { 
+    display: none; /* niente triangolino su mobile */ 
   }
 }
 

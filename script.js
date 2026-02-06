@@ -1,33 +1,53 @@
+// 1. Seleziono il bottone "share" e il popover
 const btn = document.querySelector('.share-btn');
 const shared = document.querySelector('.shared');
 
+// 2. Quando clicco il bottone...
 btn.addEventListener('click', () => {
+
+  // Ottengo posizione e dimensioni del bottone
   const rect = btn.getBoundingClientRect();
 
-  // Position Popover Ã¼ber dem Button
-  shared.style.position = 'fixed';
-  shared.style.top = rect.top - shared.offsetHeight - 100 + 'px';
-  shared.style.left = rect.right - shared.offsetWidth - 110 + 'px';
-  shared.style.zIndex = '1000';
-
-  // Einfacher Toggle
-  if (shared.style.display === 'block') {
-    shared.style.display = 'none';
-  } else {
-    shared.style.display = 'block';
-  }
-
+  // Larghezza finestra (serve per distinguere mobile vs desktop/tablet)
   const w = window.innerWidth;
-  if (w < 800) {
-    // FÃ¼r jeden px kleiner als 800 â 1 px weiter nach links, max 74 px bei 726 px
-    const shift = Math.min(800 - w, 74);
-    // aktuelle Position holen und verschieben
-    const currentLeft = parseFloat(shared.style.left) || 0;
-    shared.style.left = currentLeft - shift + 'px';
+
+  // ---------------------------------------------------------
+  // 📱 MOBILE (<480px)
+  // ---------------------------------------------------------
+  // Su mobile il popover diventa una barra in basso.
+  // Quindi non serve calcolare posizioni: basta mostrarlo/nasconderlo.
+  if (w < 480) {
+    shared.style.display = shared.style.display === 'block' ? 'none' : 'block';
+    return; // Esco dalla funzione: il resto è solo per desktop/tablet
   }
+
+  // ---------------------------------------------------------
+  // 🖥️ DESKTOP + TABLET
+  // ---------------------------------------------------------
+  // Mostro il popover (prima di calcolare offsetWidth/offsetHeight)
+  shared.style.display = 'block';
+
+  // Calcolo dimensioni reali del popover
+  const popoverWidth = shared.offsetWidth;
+  const popoverHeight = shared.offsetHeight;
+
+  // ---------------------------------------------------------
+  // 🎯 CENTRATURA PERFETTA SUL BOTTONE
+  // ---------------------------------------------------------
+  // Trovo il punto centrale del bottone
+  const centerX = rect.left + rect.width / 2;
+
+  // Posiziono il popover centrato orizzontalmente
+  // (il CSS usa transform: translateX(-50%) per la centratura finale)
+  shared.style.left = centerX + 'px';
+
+  // Posiziono il popover sopra il bottone con 20px di distanza
+  shared.style.top = rect.top - popoverHeight - 20 + 'px';
 });
 
-// Popover beim Fenster-Resize schlieÃen
+// ---------------------------------------------------------
+// 🔄 Chiudo il popover quando la finestra viene ridimensionata
+// ---------------------------------------------------------
 window.addEventListener('resize', () => {
   shared.style.display = 'none';
 });
