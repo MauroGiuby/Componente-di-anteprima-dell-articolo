@@ -25,12 +25,12 @@ body {
 }
 
 /* I figli del flex: picture e card_text */
-.card > picture,
+.card > article,
 .card > .card-text {
   width: 100%;
 }
 
-picture {
+article {
   display: block;
   overflow: hidden; /* evita stacchi ai bordi dell'immagine */
 }
@@ -153,20 +153,20 @@ picture {
 @media (min-width: 730px) {
   .card {
     flex-direction: row; /* immagine a sinistra, testo a destra */
-    max-width: 730px;
+    width: 730px; 
     height: 280px;
     margin: 0; /* centrata senza margini laterali */
     overflow: hidden;
   }
 
   /* 45% immagine — 55% testo */ 
-  .card > picture { 
-    flex: 0 0 330px; 
+  .card > article { 
+    flex: 0 0 285px; 
     height: 100%;
   } 
 
   .card > .card-text {
-    flex: 0 0 400px; 
+    flex: 0 0 445px; 
     height: 100%;
   }
 
@@ -179,7 +179,7 @@ picture {
   }
 
   .card-text {
-    flex: 0 0 485px; /* larghezza testo */ 
+    flex: 0 0 445px; /* larghezza testo */ 
     height: 100%;
     border-radius: 0 8px 8px 0; /* arrotondati solo a destra */
     /* padding: 20px; */
