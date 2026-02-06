@@ -287,12 +287,4 @@ picture {
   .shared::after { 
     display: none; /* niente triangolino su mobile */ 
   }
-
-  .footer--share-open .footer-left { 
-    display: none; 
-  } 
-  
-  .footer--share-open .share-btn { 
-    display: none; 
-  }
 }
