@@ -50,6 +50,7 @@ picture {
   justify-content: space-between;
   margin-top: 20px;
   width: 100%;
+  padding: 0;
 }
 
 .footer-left {
@@ -283,6 +284,12 @@ picture {
     margin-top: 20px;
     /* display: flex; */
   } 
+
+  /* IMPORTANTISSIMO: il footer deve diventare un contenitore verticale */ 
+  .card-footer.footer--share-open { 
+    flex-direction: column; /* permette a .shared di espandersi */ 
+    align-items: stretch; /* .shared prende tutta la larghezza */ 
+  }
   
   .shared::after { 
     display: none; /* niente triangolino su mobile */ 

@@ -10,9 +10,6 @@ const toggleSharePanel = () => {
   // Stato "share aperto" sul footer (mobile) 
   footer.classList.toggle("footer--share-open");
 
-  // Riduce il footer su mobile
-  button.parentElement.classList.toggle("author--reduce");
-
   // Cambia stile del bottone (colore/icona)
   button.classList.toggle("share-btn--open");
 
