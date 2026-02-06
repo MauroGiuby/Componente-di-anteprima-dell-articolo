@@ -264,29 +264,35 @@ picture {
     width: 100%;
   }
 
-  /* Nascondo avatar + nome + data */ 
-  .footer-left { 
+  /* Quando il pannello share è aperto */ 
+  .footer--share-open .footer-left { 
     display: none; 
   } 
   
-  /* Nascondo il bottone share */ 
-  .share-btn { 
+  .footer--share-open .share-btn { 
     display: none; 
   }
 
   .shared { 
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
+    position: relative; 
     width: 100%; 
-    border-radius: 0; 
+    border-radius: 0 0 8px 8px; 
     justify-content: center; 
     padding: 20px; 
     transform: none; /* rimuove la centratura */ 
-    display: flex;
+    margin-top: 20px;
+    /* display: flex; */
   } 
   
   .shared::after { 
     display: none; /* niente triangolino su mobile */ 
+  }
+
+  .footer--share-open .footer-left { 
+    display: none; 
+  } 
+  
+  .footer--share-open .share-btn { 
+    display: none; 
   }
 }

@@ -1,10 +1,14 @@
 const button = document.querySelector(".share-btn");
 const sharePanel = document.querySelector(".shared");
+const footer = document.querySelector(".card-footer");
 
 const toggleSharePanel = () => {
 
   // Mostra/nasconde il popover
   sharePanel.classList.toggle("hide");
+
+  // Stato "share aperto" sul footer (mobile) 
+  footer.classList.toggle("footer--share-open");
 
   // Riduce il footer su mobile
   button.parentElement.classList.toggle("author--reduce");
