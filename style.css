@@ -62,6 +62,15 @@ picture {
   align-self: flex-end;
 }
 
+.shared {
+  display: none;
+  position: fixed;
+  background: var(--grey-900);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
 .text-present-1 {
   font-family: var(--tp1-font-family);
   font-weight: var(--tp1-font-weight);

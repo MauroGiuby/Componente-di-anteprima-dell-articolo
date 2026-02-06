@@ -1,4 +1,4 @@
-const btn = document.querySelector('.btn-share');
+const btn = document.querySelector('.share-btn');
 const shared = document.querySelector('.shared');
 
 btn.addEventListener('click', () => {
