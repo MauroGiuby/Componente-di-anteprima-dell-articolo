@@ -149,7 +149,7 @@ picture {
   color: var(--grey);
 }
 
-/* Media query per desktop */
+/* Media query per desktop 730x280px, picture 285x280px */
 @media (min-width: 730px) {
   .card {
     flex-direction: row; /* immagine a sinistra, testo a destra */
