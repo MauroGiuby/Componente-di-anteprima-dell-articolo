@@ -280,19 +280,22 @@ picture {
     display: none; 
   }
 
-  .shared { 
+  .footer--share-open .shared { 
     position: relative; 
-    width: 100%; 
+
+    width: calc(100% + 60px); /* 100% + padding sx/dx di .card-text */
+    margin-left: -30px; /* annulla padding sinistro */ 
+    margin-right: -30px; /* annulla padding destro */ 
+
+    margin-top: 20px; 
+    margin-bottom: -30px;
+    padding: 20px;
     border-radius: 0 0 8px 8px; 
     justify-content: center; 
-    padding: 20px; 
     transform: none; /* rimuove la centratura */ 
-    margin-top: 20px;
     /* display: flex; */
   } 
 
-
-  
   .shared::after { 
     display: none; /* niente triangolino su mobile */ 
   }
