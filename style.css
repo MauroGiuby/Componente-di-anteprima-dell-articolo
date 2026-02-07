@@ -258,15 +258,20 @@ picture {
   }
 }
 
-
-/* 
+/* Mobile only */
 @media (max-width: 479px) {
   .card > picture,
   .card > .card-text {
     width: 100%;
   }
 
-  
+  /* IMPORTANTISSIMO: il footer deve diventare un contenitore verticale */ 
+  .card-footer.footer--share-open { 
+    flex-direction: column; /* permette a .shared di espandersi */ 
+    align-items: stretch; /* .shared prende tutta la larghezza */ 
+  }
+
+  /* Quando il pannello share è aperto */ 
   .footer--share-open .footer-left { 
     display: none; 
   } 
@@ -281,60 +286,14 @@ picture {
     border-radius: 0 0 8px 8px; 
     justify-content: center; 
     padding: 20px; 
-    transform: none; 
+    transform: none; /* rimuove la centratura */ 
     margin-top: 20px;
+    /* display: flex; */
   } 
-  
-  
-  .card-footer.footer--share-open { 
-    flex-direction: column; 
-    align-items: stretch; 
-  }
+
+
   
   .shared::after { 
-    display: none; 
-  }
-}
-*/
-
-@media (max-width: 479px) {
-  .card > picture,
-  .card > .card-text {
-    width: 100%;
-  }
-
-  /* Quando lo share è aperto, il footer diventa verticale
-     così .shared può espandersi a tutta larghezza */
-  .card-footer.footer--share-open {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* Nascondo avatar + nome + data */
-  .footer--share-open .footer-left {
-    display: none;
-  }
-
-  /* Nascondo il bottone share */
-  .footer--share-open .share-btn {
-    display: none;
-  }
-
-  /* Barra interna alla card, con larghezza pari alla card bianca */
-  .footer--share-open .shared {
-    position: relative;
-    width: calc(100% + 60px);   /* 100% + padding sx/dx di .card-text (30px + 30px) */
-    margin-left: -30px;         /* annulla padding sinistro */
-    margin-right: -30px;        /* annulla padding destro */
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 0 0 8px 8px; /* segue i bordi inferiori della card */
-    transform: none;
-    justify-content: center;
-  }
-
-  /* Nessun triangolino su mobile */
-  .footer--share-open .shared::after {
-    display: none;
+    display: none; /* niente triangolino su mobile */ 
   }
 }
