@@ -64,9 +64,9 @@ picture {
 }
 
 .shared {
-  position: fixed;
+  position: absolute;
 
-  left: 50%;
+  /* left: 50%; */
 
   display: flex;
   align-items: center;
@@ -164,6 +164,7 @@ picture {
   padding: 0;
   margin: 0;
   cursor: pointer;
+  z-index: 30;
 }
 
 .icon-share {
@@ -224,6 +225,12 @@ picture {
     flex-direction: column; 
     justify-content: center;
   }
+
+  .shared { 
+    position: absolute; 
+    right: -160px; 
+    bottom: 100px;
+  }
 }
 
 /* TABLET — 608 × 346 */
@@ -258,6 +265,12 @@ picture {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .shared { 
+    position: absolute; 
+    right: -170px; 
+    bottom: 100px;
   }
 }
 
@@ -299,7 +312,7 @@ picture {
     /* display: flex; */
   } 
 
-  .shared::after { 
+  .footer--share-open .shared::after { 
     display: none; /* niente triangolino su mobile */ 
   }
 }
