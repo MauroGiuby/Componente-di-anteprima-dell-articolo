@@ -1,7 +1,17 @@
+/* ==========================================================
+   BASE LAYOUT E TIPOGRAFIA
+   ========================================================== */
+
+/* 
+  BODY
+  - Imposta il font globale
+  - Centra verticalmente la card nella viewport
+  - Aggiunge padding laterale per una migliore resa su mobile
+*/
 body {
   font-family: "Manrope", sans-serif;
   margin: 0;
-  padding: 0 16px; /* un po di spazio laterale nella modalità mobile */
+  padding: 0 16px; /* un po' di spazio laterale in modalità mobile */
   background-color: var(--grey-200);
   display: flex;
   flex-direction: column; /* card sopra, attribution sotto */
@@ -12,6 +22,11 @@ body {
   padding-inline: 1.5rem;
 }
 
+/* 
+  CARD (mobile-first)
+  - Layout verticale: immagine sopra, testo sotto
+  - position: relative per eventuali posizionamenti interni
+*/
 .card {
   display: flex;
   position: relative;
@@ -19,9 +34,15 @@ body {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  /* overflow: hidden; */
+  /* overflow: hidden;  // rimosso per permettere al popover di uscire se necessario */
 }
 
+/* 
+  PICTURE + IMMAGINE
+  - picture: blocco per evitare spazi indesiderati
+  - overflow hidden per evitare stacchi ai bordi
+  - immagine responsive con taglio controllato
+*/
 picture {
   display: block;
   overflow: hidden; /* evita stacchi ai bordi dell'immagine */
@@ -35,6 +56,11 @@ picture {
   border-radius: 8px 8px 0 0; /* arrotondati solo sopra */
 }
 
+/* 
+  CARD-TEXT
+  - Contenitore del contenuto testuale
+  - border-radius solo sotto per completare la card
+*/
 .card-text {
   background-color: var(--white);
   padding: 30px;
@@ -44,6 +70,11 @@ picture {
   border-radius: 0 0 8px 8px; /* arrotondati solo sotto */
 }
 
+/* 
+  FOOTER (autore + bottone share)
+  - Layout orizzontale
+  - Spazio tra blocco autore e bottone
+*/
 .card-footer {
   display: flex;
   align-items: center;
@@ -59,14 +90,27 @@ picture {
   gap: 12px;
 }
 
+/* 
+  Bottone dentro card-text
+  - Allineato a destra rispetto al contenuto testuale
+*/
 .card-text button {
   align-self: flex-end;
 }
 
+/* ==========================================================
+   POPOVER SHARE (.shared) — STATO BASE
+   ========================================================== */
+
+/* 
+  .shared
+  - Di base è assoluto (verrà posizionato via media query)
+  - Flex per allineare icone e testo
+  - transform: translateX(-50%) usato se centrato con left:50%
+*/
 .shared {
   position: absolute;
-
-  /* left: 50%; */
+  /* left: 50%;  // usato solo se si centra rispetto al contenitore */
 
   display: flex;
   align-items: center;
@@ -76,14 +120,22 @@ picture {
   padding: 10px 20px;
   border-radius: 10px;
   z-index: 1000; 
-  transform: translateX(-50%); /* centratura */
+  transform: translateX(-50%); /* centratura orizzontale se combinato con left:50% */
 }
 
+/* 
+  .hide
+  - Classe di utilità per nascondere il popover
+*/
 .hide {
   display: none;
 }
 
-/* Triangolino */ 
+/* 
+  Triangolino del popover (solo desktop/tablet)
+  - Posizionato sotto il popover
+  - Centrato orizzontalmente rispetto al popover
+*/
 .shared::after { 
   content: ""; 
   position: absolute; 
@@ -97,14 +149,26 @@ picture {
   border-top: 10px solid var(--grey-900); 
 }
 
+/* 
+  share-btn--open
+  - Stato opzionale per cambiare sfondo del bottone quando attivo
+*/
 .share-btn--open {
   background: var(--grey-900);
 }
 
+/* 
+  author--reduce
+  - Classe non più usata nel nuovo flusso, ma lasciata per compatibilità
+*/
 .author--reduce {
   justify-content: center;
   padding: 20px 0;
 }
+
+/* ==========================================================
+   TIPOGRAFIA
+   ========================================================== */
 
 .text-present-1 {
   font-family: var(--tp1-font-family);
@@ -143,6 +207,9 @@ picture {
   color: var(--grey-400);
 }
 
+/* 
+  Avatar autore
+*/
 .image-michelle {
   width: 48px;
   height: 48px;
@@ -154,6 +221,11 @@ picture {
   flex-direction: column;
 }
 
+/* 
+  Bottone share
+  - Nessun bordo
+  - z-index alto per rimanere sopra il popover su tablet/desktop
+*/
 .share-btn {
   background: none;
   border: none;
@@ -163,6 +235,10 @@ picture {
   z-index: 30;
 }
 
+/* 
+  Icona share
+  - Cerchio con sfondo grigio chiaro
+*/
 .icon-share {
   width: 30px;
   height: 30px;
@@ -176,6 +252,9 @@ picture {
   padding: 8px;
 }
 
+/* 
+  Attribution footer
+*/
 .attribution {
   font-size: 0.75rem;
   text-align: center;
@@ -183,14 +262,18 @@ picture {
   color: var(--grey);
 }
 
-/* Media query per desktop 730x280px, picture 285x280px */
+/* ==========================================================
+   DESKTOP (≥ 730px)
+   - Layout orizzontale fisso
+   - Popover posizionato manualmente (top:50%, left:93%)
+========================================================== */
 @media (min-width: 730px) {
   .card {
     display: flex;
     flex-direction: row; /* immagine a sinistra, testo a destra */
     width: 730px; 
     height: 280px;
-    overflow: visible;
+    overflow: visible; /* permette al popover di uscire dai bordi */
   }
 
   .card > picture { 
@@ -202,7 +285,7 @@ picture {
     width: 100%; 
     height: 100%; 
     object-fit: cover; /* mantiene il taglio */ 
-    object-position: center; /* puoi regolare se vuoi spostare il focus */
+    object-position: center; 
     border-radius: 8px 0 0 8px; /* arrotondati solo a sinistra */
   }
 
@@ -210,27 +293,39 @@ picture {
     flex: 0 0 445px; /* larghezza testo */ 
     height: 100%;
     border-radius: 0 8px 8px 0; /* arrotondati solo a destra */
-    /* padding: 20px; */
     display: flex; 
     flex-direction: column; 
     justify-content: center;
   }
 
+  /* 
+    Bottone share
+    - position: relative per eventuali riferimenti futuri
+    - z-index alto per rimanere sopra il popover
+  */
   .share-btn { 
     position: relative; 
     z-index: 20; /* il bottone resta sopra */ 
   }
 
+  /* 
+    Popover su desktop
+    - Posizionato manualmente rispetto alla card
+    - top:50% e left:93% sono valori scelti per allinearlo visivamente
+  */
   .shared { 
     position: absolute; 
     top: 50%;
     left: 93%;
-    z-index: 10; /* il popover resta sotto */
+    z-index: 10; /* il popover resta sotto il bottone */
   }
-
 }
 
-/* TABLET — 608 × 346 */
+/* ==========================================================
+   TABLET (480px – 729px)
+   - Layout orizzontale
+   - Popover posizionato manualmente (top:50%, left:93%)
+========================================================== */
 @media (min-width: 480px) and (max-width: 729px) {
 
   .card {
@@ -238,7 +333,7 @@ picture {
     flex-direction: row; /* affiancamento */
     width: 608px;
     height: 346px;
-    overflow: visible;
+    overflow: visible; /* evita il taglio del popover */
   }
 
   .card > picture {
@@ -264,6 +359,10 @@ picture {
     justify-content: center;
   }
 
+  /* 
+    Popover su tablet
+    - Stesso posizionamento del desktop per coerenza visiva
+  */
   .shared { 
     position: absolute; 
     top: 50%;
@@ -271,20 +370,29 @@ picture {
   }
 }
 
-/* Mobile only */
+/* ==========================================================
+   MOBILE ONLY (≤ 479px)
+   - Footer diventa barra share a tutta larghezza
+========================================================== */
 @media (max-width: 479px) {
   .card > picture,
   .card > .card-text {
     width: 100%;
   }
 
-  /* IMPORTANTISSIMO: il footer deve diventare un contenitore verticale */ 
+  /* 
+    Quando il pannello share è aperto:
+    - il footer diventa verticale
+    - .shared può espandersi a tutta larghezza
+  */
   .card-footer.footer--share-open { 
     flex-direction: column; /* permette a .shared di espandersi */ 
     align-items: stretch; /* .shared prende tutta la larghezza */ 
   }
 
-  /* Quando il pannello share è aperto */ 
+  /* 
+    Nascondo avatar + nome + bottone quando lo share è aperto
+  */ 
   .footer--share-open .footer-left { 
     display: none; 
   } 
@@ -293,6 +401,11 @@ picture {
     display: none; 
   }
 
+  /* 
+    Popover su mobile
+    - Diventa una barra a tutta larghezza interna alla card
+    - Compensa il padding di .card-text con width + margin negativi
+  */
   .footer--share-open .shared { 
     position: relative; 
 
@@ -308,6 +421,9 @@ picture {
     transform: none; /* rimuove la centratura */ 
   } 
 
+  /* 
+    Su mobile il triangolino non serve
+  */
   .footer--share-open .shared::after { 
     display: none; /* niente triangolino su mobile */ 
   }
