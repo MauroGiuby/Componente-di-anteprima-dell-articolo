@@ -19,7 +19,7 @@ body {
   width: 100%;
   height: auto;
   margin: 0 auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 picture {
@@ -99,10 +99,6 @@ picture {
 
 .share-btn--open {
   background: var(--grey-900);
-}
-
-.share-btn--open .icon-share {
-  filter: brightness(0) invert(1); /* icona bianca */
 }
 
 .author--reduce {
@@ -202,12 +198,6 @@ picture {
     height: 100%;
   } 
 
-  /*
-  .card > .card-text {
-    flex: 0 0 445px; 
-  }
-  */
-
   .image-drawers {
     width: 100%; 
     height: 100%; 
@@ -226,10 +216,16 @@ picture {
     justify-content: center;
   }
 
+  .share-btn { 
+    position: relative; 
+    z-index: 20; /* il bottone resta sopra */ 
+  }
+
   .shared { 
     position: absolute; 
     top: 50%;
     left: 93%;
+    z-index: 10; /* il popover resta sotto */
   }
 
 }
@@ -273,7 +269,6 @@ picture {
     top: 50%;
     left: 93%;
   }
-
 }
 
 /* Mobile only */
@@ -311,7 +306,6 @@ picture {
     border-radius: 0 0 8px 8px; 
     justify-content: center; 
     transform: none; /* rimuove la centratura */ 
-    /* display: flex; */
   } 
 
   .footer--share-open .shared::after { 
