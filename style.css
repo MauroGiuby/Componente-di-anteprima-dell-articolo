@@ -194,7 +194,7 @@ picture {
     flex-direction: row; /* immagine a sinistra, testo a destra */
     width: 730px; 
     height: 280px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .card > picture { 
@@ -228,9 +228,10 @@ picture {
 
   .shared { 
     position: absolute; 
-    right: -160px; 
-    bottom: 100px;
+    top: 50%;
+    left: 93%;
   }
+
 }
 
 /* TABLET — 608 × 346 */
@@ -241,7 +242,7 @@ picture {
     flex-direction: row; /* affiancamento */
     width: 608px;
     height: 346px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .card > picture {
@@ -269,9 +270,10 @@ picture {
 
   .shared { 
     position: absolute; 
-    right: -170px; 
-    bottom: 100px;
+    top: 50%;
+    left: 93%;
   }
+
 }
 
 /* Mobile only */
