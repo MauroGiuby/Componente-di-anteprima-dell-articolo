@@ -317,7 +317,7 @@ picture {
     position: absolute; 
     top: 50%;
     left: 93%;
-    z-index: 10; /* il popover resta sotto il bottone */
+    z-index: 10; /* il popover resta sopra il bottone */
   }
 }
 
